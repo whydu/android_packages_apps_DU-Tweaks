@@ -43,6 +43,12 @@
         android:summary="@string/swap_navigation_keys_title_summary"
         android:defaultValue="false" />
 
+    <Preference
+        android:key="gesture_settings"
+        android:title="@string/gesture_settings_title"
+        android:summary="@string/use_bottom_gesture_summary"
+        android:fragment="com.dirtyunicorns.tweaks.fragments.GestureSettings" />
+
     <PreferenceCategory
         android:key="back_key"
         android:title="@string/back_key_title">
