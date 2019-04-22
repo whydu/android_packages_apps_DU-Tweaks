@@ -382,4 +382,8 @@
     <string name="unit_dpi">dpi</string>
     <string name="unit_px">px</string>
 
+    <!-- One Hand mode -->
+    <string name="one_hand_mode_title">One-handed mode</string>
+    <string name="one_hand_mode_summary">Allow swiping on navigation bar to enable one-handed mode</string>
+
 </resources>

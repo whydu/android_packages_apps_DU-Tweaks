@@ -226,6 +226,12 @@
         </Preference>
 
         <com.dirtyunicorns.support.preferences.SystemSettingSwitchPreference
+            android:key="one_hand_mode_enabled"
+            android:title="@string/one_hand_mode_title"
+            android:summary="@string/one_hand_mode_summary"
+            android:defaultValue="false" />
+
+        <com.dirtyunicorns.support.preferences.SystemSettingSwitchPreference
             android:key="navigation_bar_menu_arrow_keys"
             android:title="@string/show_navbar_arrow_keys_title"
             android:summary="@string/show_navbar_arrow_keys_summary"

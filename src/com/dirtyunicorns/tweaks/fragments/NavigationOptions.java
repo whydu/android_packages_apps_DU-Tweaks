@@ -74,6 +74,7 @@ public class NavigationOptions extends SettingsPreferenceFragment
     private static final String KEY_CAMERA_DOUBLE_TAP_ACTION = "camera_key_double_tap";
     private static final String KEY_ASSIST_LONG_PRESS_ACTION = "assist_key_long_press";
     private static final String KEY_ASSIST_DOUBLE_TAP_ACTION = "assist_key_double_tap";
+    private static final String KEY_ONEHAND_UI_TOGGLE = "one_hand_mode_enabled";
 
     private static final String KEY_CATEGORY_HOME          = "home_key";
     private static final String KEY_CATEGORY_BACK          = "back_key";
@@ -115,6 +116,7 @@ public class NavigationOptions extends SettingsPreferenceFragment
 
     private SystemSettingSwitchPreference mSwapHardwareKeys;
     private SystemSettingSwitchPreference mNavigationArrowKeys;
+    private SystemSettingSwitchPreference mOneHandMode;
 
     private static final int KEY_MASK_MENU = 0x04;
     private static final int KEY_MASK_ASSIST = 0x08;
@@ -173,6 +175,7 @@ public class NavigationOptions extends SettingsPreferenceFragment
         assistCategory = (PreferenceCategory) findPreference(KEY_CATEGORY_ASSIST);
         appSwitchCategory = (PreferenceCategory) findPreference(KEY_CATEGORY_APP_SWITCH);
         cameraCategory = (PreferenceCategory) findPreference(KEY_CATEGORY_CAMERA);
+        mOneHandMode = (SystemSettingSwitchPreference) findPreference(KEY_ONEHAND_UI_TOGGLE);
 
         boolean defaultToNavigationBar = getResources().getBoolean(
                 com.android.internal.R.bool.config_defaultToNavigationBar);
@@ -505,6 +508,8 @@ public class NavigationOptions extends SettingsPreferenceFragment
                 appSwitchCategory.setEnabled(true);
                 cameraCategory.setEnabled(true);
                 mNavigationArrowKeys.setEnabled(true);
+                mOneHandMode.setEnabled(true);
+                mOneHandMode.setSelectable(true);
             } else {
                 homeCategory.setEnabled(false);
                 backCategory.setEnabled(false);
@@ -513,6 +518,9 @@ public class NavigationOptions extends SettingsPreferenceFragment
                 appSwitchCategory.setEnabled(false);
                 cameraCategory.setEnabled(false);
                 mNavigationArrowKeys.setEnabled(false);
+                mOneHandMode.setEnabled(true);
+                mOneHandMode.setSelectable(true);
+
             }
 
             if (swipeUpEnabled != OFF) {
@@ -523,6 +531,8 @@ public class NavigationOptions extends SettingsPreferenceFragment
                 appSwitchCategory.setEnabled(false);
                 cameraCategory.setEnabled(false);
                 mNavigationArrowKeys.setEnabled(!fullGestureModeEnabled());
+                mOneHandMode.setEnabled(true);
+                mOneHandMode.setSelectable(true);
             }
 
             if (swipeUpEnabled != OFF && !navigationBar) {
@@ -532,6 +542,8 @@ public class NavigationOptions extends SettingsPreferenceFragment
                 assistCategory.setEnabled(false);
                 appSwitchCategory.setEnabled(false);
                 cameraCategory.setEnabled(false);
+                mOneHandMode.setEnabled(true);
+                mOneHandMode.setSelectable(true);
             }
         } else {
             if (navigationBar) {
@@ -542,6 +554,8 @@ public class NavigationOptions extends SettingsPreferenceFragment
                 appSwitchCategory.setEnabled(true);
                 cameraCategory.setEnabled(true);
                 mNavigationArrowKeys.setEnabled(true);
+                mOneHandMode.setEnabled(true);
+                mOneHandMode.setSelectable(true);
             } else {
                 homeCategory.setEnabled(true);
                 backCategory.setEnabled(true);
@@ -560,6 +574,8 @@ public class NavigationOptions extends SettingsPreferenceFragment
                 appSwitchCategory.setEnabled(false);
                 cameraCategory.setEnabled(false);
                 mNavigationArrowKeys.setEnabled(!fullGestureModeEnabled());
+                mOneHandMode.setEnabled(true);
+                mOneHandMode.setSelectable(true);
             } else {
                 homeCategory.setEnabled(true);
                 backCategory.setEnabled(true);
@@ -568,6 +584,8 @@ public class NavigationOptions extends SettingsPreferenceFragment
                 appSwitchCategory.setEnabled(true);
                 cameraCategory.setEnabled(true);
                 mNavigationArrowKeys.setEnabled(navigationBar);
+                mOneHandMode.setEnabled(true);
+                mOneHandMode.setSelectable(true);
             }
 
             if (swipeUpEnabled != OFF && !navigationBar) {
@@ -578,6 +596,8 @@ public class NavigationOptions extends SettingsPreferenceFragment
                 appSwitchCategory.setEnabled(true);
                 cameraCategory.setEnabled(true);
                 mNavigationArrowKeys.setEnabled(false);
+                mOneHandMode.setEnabled(true);
+                mOneHandMode.setSelectable(true);
             }
         }
     }
