@@ -162,7 +162,6 @@ public class DirtyTweaks extends SettingsPreferenceFragment {
 
     @Override
     public void onCreateOptionsMenu(Menu menu, MenuInflater inflater) {
-        menu.add(0, 0, 0, R.string.dialog_team_title);
     }
 
     @Override
