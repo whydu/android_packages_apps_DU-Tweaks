@@ -30,4 +30,10 @@
         android:summary="@string/show_lte_fourgee_summary"
         android:defaultValue="false" />
 
+    <SwitchPreference
+        android:key="volte_icon"
+        android:title="@string/volte_icon_title"
+        android:summary="@string/volte_icon_summary"
+        android:defaultValue="true"/>
+
 </PreferenceScreen>
